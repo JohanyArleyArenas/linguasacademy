@@ -1,0 +1,289 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  STUDENT
+  TEACHER
+  ADMIN
+}
+
+enum TeacherStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  SUSPENDED
+}
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  COMPLETED
+  CANCELLED
+}
+
+enum PaymentStatus {
+  PENDING
+  PAID
+  REFUNDED
+  FAILED
+}
+
+enum WithdrawalStatus {
+  REQUESTED
+  APPROVED
+  PAID
+  REJECTED
+}
+
+enum ReportStatus {
+  OPEN
+  RESOLVED
+  DISMISSED
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  name         String
+  role         Role     @default(STUDENT)
+  country      String?
+  avatarUrl    String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  studentProfile StudentProfile?
+  teacherProfile TeacherProfile?
+
+  sentMessages  Message[]          @relation("MessagesSent")
+  conversations ConversationUser[]
+  favorites     Favorite[]
+  reportsFiled  Report[]           @relation("ReportsFiled")
+  notifications Notification[]
+}
+
+model StudentProfile {
+  id        String   @id @default(cuid())
+  userId    String   @unique
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  bio       String?
+  createdAt DateTime @default(now())
+
+  bookings Booking[]
+  reviews  Review[]
+}
+
+model TeacherProfile {
+  id            String        @id @default(cuid())
+  userId        String        @unique
+  user          User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  headline      String?
+  bio           String?
+  videoUrl      String?
+  pricePerHour  Decimal       @db.Decimal(10, 2)
+  status        TeacherStatus @default(PENDING)
+  rejectionNote String?
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  languages    TeacherLanguage[]
+  specialties  TeacherSpecialty[]
+  availability Availability[]
+  bookings     Booking[]
+  reviews      Review[]
+  favoritedBy  Favorite[]
+  withdrawals  Withdrawal[]
+
+  balanceCents Int @default(0)
+}
+
+model Language {
+  id   String @id @default(cuid())
+  code String @unique
+  name String
+
+  teachers TeacherLanguage[]
+}
+
+model TeacherLanguage {
+  id         String         @id @default(cuid())
+  teacherId  String
+  teacher    TeacherProfile @relation(fields: [teacherId], references: [id], onDelete: Cascade)
+  languageId String
+  language   Language       @relation(fields: [languageId], references: [id], onDelete: Cascade)
+  level      String
+
+  @@unique([teacherId, languageId])
+}
+
+model Specialty {
+  id   String @id @default(cuid())
+  name String @unique
+
+  teachers TeacherSpecialty[]
+}
+
+model TeacherSpecialty {
+  id          String         @id @default(cuid())
+  teacherId   String
+  teacher     TeacherProfile @relation(fields: [teacherId], references: [id], onDelete: Cascade)
+  specialtyId String
+  specialty   Specialty      @relation(fields: [specialtyId], references: [id], onDelete: Cascade)
+
+  @@unique([teacherId, specialtyId])
+}
+
+model Availability {
+  id        String         @id @default(cuid())
+  teacherId String
+  teacher   TeacherProfile @relation(fields: [teacherId], references: [id], onDelete: Cascade)
+  startsAt  DateTime
+  endsAt    DateTime
+  isBooked  Boolean        @default(false)
+
+  booking Booking?
+
+  @@index([teacherId, startsAt])
+}
+
+model Booking {
+  id             String         @id @default(cuid())
+  studentId      String
+  student        StudentProfile @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  teacherId      String
+  teacher        TeacherProfile @relation(fields: [teacherId], references: [id], onDelete: Cascade)
+  availabilityId String         @unique
+  availability   Availability   @relation(fields: [availabilityId], references: [id], onDelete: Cascade)
+  status         BookingStatus  @default(PENDING)
+  priceCents     Int
+  createdAt      DateTime       @default(now())
+
+  payment Payment?
+  lesson  Lesson?
+  review  Review?
+}
+
+model Lesson {
+  id          String    @id @default(cuid())
+  bookingId   String    @unique
+  booking     Booking   @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  notes       String?
+  completedAt DateTime?
+  createdAt   DateTime  @default(now())
+}
+
+model Conversation {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+
+  participants ConversationUser[]
+  messages     Message[]
+}
+
+model ConversationUser {
+  id             String       @id @default(cuid())
+  conversationId String
+  conversation   Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  userId         String
+  user           User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([conversationId, userId])
+}
+
+model Message {
+  id             String       @id @default(cuid())
+  conversationId String
+  conversation   Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  senderId       String
+  sender         User         @relation("MessagesSent", fields: [senderId], references: [id], onDelete: Cascade)
+  body           String
+  createdAt      DateTime     @default(now())
+
+  @@index([conversationId, createdAt])
+}
+
+model Review {
+  id        String         @id @default(cuid())
+  bookingId String         @unique
+  booking   Booking        @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  studentId String
+  student   StudentProfile @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  teacherId String
+  teacher   TeacherProfile @relation(fields: [teacherId], references: [id], onDelete: Cascade)
+  rating    Int
+  comment   String?
+  createdAt DateTime       @default(now())
+  isHidden  Boolean        @default(false)
+
+  reports Report[]
+}
+
+model Favorite {
+  id        String         @id @default(cuid())
+  userId    String
+  user      User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  teacherId String
+  teacher   TeacherProfile @relation(fields: [teacherId], references: [id], onDelete: Cascade)
+  createdAt DateTime       @default(now())
+
+  @@unique([userId, teacherId])
+}
+
+model Payment {
+  id          String        @id @default(cuid())
+  bookingId   String        @unique
+  booking     Booking       @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  amountCents Int
+  status      PaymentStatus @default(PENDING)
+  provider    String        @default("stub")
+  createdAt   DateTime      @default(now())
+
+  transaction Transaction?
+}
+
+model Transaction {
+  id          String   @id @default(cuid())
+  paymentId   String   @unique
+  payment     Payment  @relation(fields: [paymentId], references: [id], onDelete: Cascade)
+  type        String
+  amountCents Int
+  createdAt   DateTime @default(now())
+}
+
+model Withdrawal {
+  id          String           @id @default(cuid())
+  teacherId   String
+  teacher     TeacherProfile   @relation(fields: [teacherId], references: [id], onDelete: Cascade)
+  amountCents Int
+  status      WithdrawalStatus @default(REQUESTED)
+  createdAt   DateTime         @default(now())
+  resolvedAt  DateTime?
+}
+
+model Report {
+  id         String       @id @default(cuid())
+  reporterId String
+  reporter   User         @relation("ReportsFiled", fields: [reporterId], references: [id], onDelete: Cascade)
+  reviewId   String?
+  review     Review?      @relation(fields: [reviewId], references: [id], onDelete: Cascade)
+  reason     String
+  status     ReportStatus @default(OPEN)
+  createdAt  DateTime     @default(now())
+  resolvedAt DateTime?
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title     String
+  body      String
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
