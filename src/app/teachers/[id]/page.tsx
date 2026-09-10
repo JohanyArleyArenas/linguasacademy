@@ -5,6 +5,7 @@ import { formatPrice, formatDateTime } from "@/lib/format";
 import { FavoriteButton } from "@/components/favorite-button";
 import { BookSlotButton } from "@/components/book-slot-button";
 import { ReportReviewButton } from "@/components/report-review-button";
+import { ContactTeacherButton } from "@/components/contact-teacher-button";
 
 export default async function TeacherProfilePage({
   params,
@@ -139,6 +140,14 @@ export default async function TeacherProfilePage({
               {formatPrice(teacher.pricePerHour)}
               <span className="text-sm font-normal text-neutral-500">/hora</span>
             </p>
+
+            <div className="mt-4">
+              <ContactTeacherButton
+                teacherId={teacher.id}
+                isAuthed={!!session?.user}
+                isOwnProfile={session?.user?.id === teacher.userId}
+              />
+            </div>
 
             <h3 className="mt-5 text-sm font-medium text-neutral-900">
               Horarios disponibles

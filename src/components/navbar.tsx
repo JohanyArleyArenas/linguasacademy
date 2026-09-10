@@ -2,6 +2,7 @@ import Link from "next/link";
 import { auth } from "@/lib/auth";
 import { SignOutButton } from "@/components/sign-out-button";
 import { Logo } from "@/components/logo";
+import { countUnreadMessages } from "@/lib/conversations";
 
 const dashboardByRole: Record<string, string> = {
   STUDENT: "/dashboard/student",
@@ -11,6 +12,7 @@ const dashboardByRole: Record<string, string> = {
 
 export async function Navbar() {
   const session = await auth();
+  const unreadCount = session?.user ? await countUnreadMessages(session.user.id) : 0;
 
   return (
     <header className="border-b border-neutral-200 bg-white">
@@ -29,6 +31,17 @@ export async function Navbar() {
 
           {session?.user ? (
             <>
+              <Link
+                href="/dashboard/messages"
+                className="flex items-center gap-1.5 text-neutral-600 hover:text-neutral-900"
+              >
+                Mensajes
+                {unreadCount > 0 && (
+                  <span className="rounded-full bg-emerald-600 px-1.5 py-0.5 text-xs font-medium text-white">
+                    {unreadCount}
+                  </span>
+                )}
+              </Link>
               <Link
                 href={dashboardByRole[session.user.role]}
                 className="text-neutral-600 hover:text-neutral-900"

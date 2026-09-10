@@ -31,6 +31,10 @@ export const reviewSchema = z.object({
   comment: z.string().max(2000).optional(),
 });
 
+export const messageSchema = z.object({
+  body: z.string().trim().min(1).max(4000),
+});
+
 export const reportSchema = z.object({
   reviewId: z.string(),
   reason: z.string().min(5).max(1000),

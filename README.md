@@ -23,6 +23,12 @@ moderan la plataforma.
 7. El profesor solicita un retiro de su saldo; un admin lo aprueba y marca
    como pagado.
 
+En cualquier momento, estudiante y profesor pueden escribirse desde el perfil
+del profesor (`Enviar mensaje`). Las conversaciones viven en
+`/dashboard/messages`, con indicador de mensajes no leídos en la barra
+superior. Solo los participantes de una conversación pueden leerla o
+escribir en ella.
+
 ## Stack
 
 - **Frontend/Backend**: Next.js (App Router) + TypeScript + Tailwind CSS
@@ -83,8 +89,8 @@ Ver `prisma/schema.prisma`. Resumen:
 
 ## Próximos pasos sugeridos
 
-- Mensajería en tiempo real entre estudiante y profesor (el modelo de datos
-  ya existe: `Conversation`/`Message`).
+- Entrega en tiempo real de los mensajes (hoy el hilo se actualiza al enviar
+  o al recargar; falta websockets o polling).
 - Integración de videollamadas.
 - Integración de pagos reales (Stripe) y comisiones de la plataforma.
 - Notificaciones por correo/push (el modelo `Notification` ya existe).
