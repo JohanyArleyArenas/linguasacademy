@@ -15,7 +15,7 @@ export function ReviewForm({ bookingId }: { bookingId: string }) {
     return (
       <button
         onClick={() => setOpen(true)}
-        className="text-sm font-medium text-indigo-600 hover:text-indigo-500"
+        className="text-sm font-medium text-emerald-600 hover:text-emerald-500"
       >
         Dejar reseña
       </button>
@@ -65,7 +65,7 @@ export function ReviewForm({ bookingId }: { bookingId: string }) {
       <button
         type="submit"
         disabled={isPending}
-        className="self-start rounded-md bg-indigo-600 px-3 py-1.5 text-xs font-medium text-white hover:bg-indigo-500 disabled:opacity-60"
+        className="self-start rounded-md bg-emerald-600 px-3 py-1.5 text-xs font-medium text-white hover:bg-emerald-500 disabled:opacity-60"
       >
         {isPending ? "Enviando..." : "Enviar reseña"}
       </button>

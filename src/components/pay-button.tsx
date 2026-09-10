@@ -29,7 +29,7 @@ export function PayButton({ bookingId }: { bookingId: string }) {
       <button
         onClick={handlePay}
         disabled={isPending}
-        className="w-full rounded-md bg-indigo-600 px-4 py-3 font-medium text-white hover:bg-indigo-500 disabled:opacity-60"
+        className="w-full rounded-md bg-emerald-600 px-4 py-3 font-medium text-white hover:bg-emerald-500 disabled:opacity-60"
       >
         {isPending ? "Procesando pago..." : "Pagar ahora (simulado)"}
       </button>

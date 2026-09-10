@@ -49,7 +49,7 @@ async function main() {
     update: {},
     create: {
       email: "admin@linguasacademy.test",
-      name: "Admin LinguasAcademy",
+      name: "Admin Lingua's Academy",
       passwordHash,
       role: "ADMIN",
     },

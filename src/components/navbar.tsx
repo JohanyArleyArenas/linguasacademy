@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { auth } from "@/lib/auth";
 import { SignOutButton } from "@/components/sign-out-button";
+import { Logo } from "@/components/logo";
 
 const dashboardByRole: Record<string, string> = {
   STUDENT: "/dashboard/student",
@@ -14,8 +15,11 @@ export async function Navbar() {
   return (
     <header className="border-b border-neutral-200 bg-white">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-        <Link href="/" className="text-lg font-semibold tracking-tight">
-          Lingua<span className="text-indigo-600">Academy</span>
+        <Link href="/" className="flex items-center gap-2">
+          <Logo className="h-9 w-9" />
+          <span className="text-lg font-semibold tracking-tight">
+            Lingua&apos;s <span className="text-emerald-600">Academy</span>
+          </span>
         </Link>
 
         <nav className="flex items-center gap-4 text-sm">
@@ -40,7 +44,7 @@ export async function Navbar() {
               </Link>
               <Link
                 href="/register"
-                className="rounded-md bg-indigo-600 px-3 py-1.5 font-medium text-white hover:bg-indigo-500"
+                className="rounded-md bg-emerald-600 px-3 py-1.5 font-medium text-white hover:bg-emerald-500"
               >
                 Regístrate
               </Link>

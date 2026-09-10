@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "LinguasAcademy — Aprende idiomas con profesores nativos",
+  title: "Lingua's Academy — Aprende idiomas con profesores nativos",
   description:
     "Encuentra profesores de idiomas, reserva clases y aprende a tu ritmo.",
 };

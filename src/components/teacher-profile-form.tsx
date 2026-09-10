@@ -129,7 +129,7 @@ export function TeacherProfileForm({
               onClick={() => toggle(languageIds, setLanguageIds, lang.id)}
               className={`rounded-full border px-3 py-1 text-xs ${
                 languageIds.includes(lang.id)
-                  ? "border-indigo-400 bg-indigo-50 text-indigo-700"
+                  ? "border-emerald-400 bg-emerald-50 text-emerald-700"
                   : "border-neutral-300 text-neutral-600"
               }`}
             >
@@ -151,7 +151,7 @@ export function TeacherProfileForm({
               onClick={() => toggle(specialtyIds, setSpecialtyIds, spec.id)}
               className={`rounded-full border px-3 py-1 text-xs ${
                 specialtyIds.includes(spec.id)
-                  ? "border-indigo-400 bg-indigo-50 text-indigo-700"
+                  ? "border-emerald-400 bg-emerald-50 text-emerald-700"
                   : "border-neutral-300 text-neutral-600"
               }`}
             >
@@ -165,14 +165,14 @@ export function TeacherProfileForm({
       {success && (
         <p className="text-sm text-emerald-600">
           Perfil guardado. Quedará pendiente de aprobación por el equipo de
-          LinguasAcademy.
+          Lingua&apos;s Academy.
         </p>
       )}
 
       <button
         type="submit"
         disabled={isPending}
-        className="self-start rounded-md bg-indigo-600 px-5 py-2 text-sm font-medium text-white hover:bg-indigo-500 disabled:opacity-60"
+        className="self-start rounded-md bg-emerald-600 px-5 py-2 text-sm font-medium text-white hover:bg-emerald-500 disabled:opacity-60"
       >
         {isPending ? "Guardando..." : "Guardar perfil"}
       </button>

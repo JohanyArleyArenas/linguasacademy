@@ -71,7 +71,7 @@ export default async function TeacherDashboardPage() {
         </div>
       )}
       {!full.headline && (
-        <div className="mt-4 rounded-md bg-indigo-50 p-4 text-sm text-indigo-700">
+        <div className="mt-4 rounded-md bg-emerald-50 p-4 text-sm text-emerald-700">
           Completa tu perfil para empezar a recibir estudiantes.{" "}
           <Link href="/dashboard/teacher/profile" className="font-medium underline">
             Editar perfil

@@ -61,7 +61,7 @@ function RegisterForm() {
           type="button"
           onClick={() => setRole("STUDENT")}
           className={`flex-1 rounded px-3 py-1.5 ${
-            role === "STUDENT" ? "bg-indigo-600 text-white" : "text-neutral-600"
+            role === "STUDENT" ? "bg-emerald-600 text-white" : "text-neutral-600"
           }`}
         >
           Soy estudiante
@@ -70,7 +70,7 @@ function RegisterForm() {
           type="button"
           onClick={() => setRole("TEACHER")}
           className={`flex-1 rounded px-3 py-1.5 ${
-            role === "TEACHER" ? "bg-indigo-600 text-white" : "text-neutral-600"
+            role === "TEACHER" ? "bg-emerald-600 text-white" : "text-neutral-600"
           }`}
         >
           Soy profesor
@@ -86,7 +86,7 @@ function RegisterForm() {
             required
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="mt-1 w-full rounded-md border border-neutral-300 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none"
+            className="mt-1 w-full rounded-md border border-neutral-300 px-3 py-2 text-sm focus:border-emerald-500 focus:outline-none"
           />
         </div>
         <div>
@@ -98,7 +98,7 @@ function RegisterForm() {
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="mt-1 w-full rounded-md border border-neutral-300 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none"
+            className="mt-1 w-full rounded-md border border-neutral-300 px-3 py-2 text-sm focus:border-emerald-500 focus:outline-none"
           />
         </div>
         <div>
@@ -111,7 +111,7 @@ function RegisterForm() {
             minLength={8}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="mt-1 w-full rounded-md border border-neutral-300 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none"
+            className="mt-1 w-full rounded-md border border-neutral-300 px-3 py-2 text-sm focus:border-emerald-500 focus:outline-none"
           />
         </div>
 
@@ -120,7 +120,7 @@ function RegisterForm() {
         <button
           type="submit"
           disabled={loading}
-          className="mt-2 rounded-md bg-indigo-600 px-4 py-2 font-medium text-white hover:bg-indigo-500 disabled:opacity-60"
+          className="mt-2 rounded-md bg-emerald-600 px-4 py-2 font-medium text-white hover:bg-emerald-500 disabled:opacity-60"
         >
           {loading ? "Creando cuenta..." : "Crear cuenta"}
         </button>
@@ -128,7 +128,7 @@ function RegisterForm() {
 
       <p className="mt-6 text-sm text-neutral-600">
         ¿Ya tienes cuenta?{" "}
-        <Link href="/login" className="font-medium text-indigo-600">
+        <Link href="/login" className="font-medium text-emerald-600">
           Inicia sesión
         </Link>
       </p>

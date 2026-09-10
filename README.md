@@ -1,4 +1,4 @@
-# LinguasAcademy
+# Lingua's Academy
 
 MVP de una plataforma de clases de idiomas al estilo Preply/italki: estudiantes
 encuentran profesores, reservan y pagan clases, y valoran su experiencia;

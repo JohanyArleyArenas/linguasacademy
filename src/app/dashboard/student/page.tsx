@@ -63,7 +63,7 @@ export default async function StudentDashboardPage() {
               {booking.status === "PENDING" && (
                 <Link
                   href={`/checkout/${booking.id}`}
-                  className="mt-3 inline-block text-sm font-medium text-indigo-600 hover:text-indigo-500"
+                  className="mt-3 inline-block text-sm font-medium text-emerald-600 hover:text-emerald-500"
                 >
                   Completar pago
                 </Link>
@@ -85,7 +85,7 @@ export default async function StudentDashboardPage() {
           {bookings.length === 0 && (
             <p className="text-sm text-neutral-500">
               Aún no tienes clases reservadas.{" "}
-              <Link href="/teachers" className="text-indigo-600">
+              <Link href="/teachers" className="text-emerald-600">
                 Busca un profesor
               </Link>
               .
@@ -103,7 +103,7 @@ export default async function StudentDashboardPage() {
             <Link
               key={fav.id}
               href={`/teachers/${fav.teacherId}`}
-              className="rounded-lg border border-neutral-200 bg-white p-4 hover:border-indigo-300"
+              className="rounded-lg border border-neutral-200 bg-white p-4 hover:border-emerald-300"
             >
               <p className="font-medium text-neutral-900">
                 {fav.teacher.user.name}

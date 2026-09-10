@@ -22,7 +22,7 @@ export default async function TeacherProfileEditPage() {
         Editar mi perfil de profesor
       </h1>
       <p className="mt-1 text-sm text-neutral-600">
-        Los cambios se enviarán a revisión del equipo de LinguasAcademy antes
+        Los cambios se enviarán a revisión del equipo de Lingua&apos;s Academy antes
         de publicarse.
       </p>
 

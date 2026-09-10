@@ -20,7 +20,7 @@ export function CompleteBookingButton({ bookingId }: { bookingId: string }) {
     <button
       onClick={handleClick}
       disabled={isPending}
-      className="text-sm font-medium text-indigo-600 hover:text-indigo-500 disabled:opacity-60"
+      className="text-sm font-medium text-emerald-600 hover:text-emerald-500 disabled:opacity-60"
     >
       {isPending ? "Marcando..." : "Marcar clase como impartida"}
     </button>

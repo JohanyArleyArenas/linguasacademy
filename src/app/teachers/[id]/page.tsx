@@ -73,7 +73,7 @@ export default async function TeacherProfilePage({
             {teacher.languages.map((tl) => (
               <span
                 key={tl.id}
-                className="rounded-full bg-indigo-50 px-3 py-1 text-xs font-medium text-indigo-700"
+                className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-700"
               >
                 {tl.language.name} · {tl.level}
               </span>

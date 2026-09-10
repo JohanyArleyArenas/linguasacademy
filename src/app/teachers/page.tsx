@@ -78,7 +78,7 @@ export default async function TeachersPage({
 
         <button
           type="submit"
-          className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-500"
+          className="rounded-md bg-emerald-600 px-4 py-2 text-sm font-medium text-white hover:bg-emerald-500"
         >
           Filtrar
         </button>
@@ -96,13 +96,13 @@ export default async function TeachersPage({
             <Link
               key={teacher.id}
               href={`/teachers/${teacher.id}`}
-              className="flex flex-col rounded-lg border border-neutral-200 bg-white p-5 hover:border-indigo-300 hover:shadow-sm"
+              className="flex flex-col rounded-lg border border-neutral-200 bg-white p-5 hover:border-emerald-300 hover:shadow-sm"
             >
               <div className="flex items-center justify-between">
                 <h3 className="font-medium text-neutral-900">
                   {teacher.user.name}
                 </h3>
-                <span className="text-sm font-semibold text-indigo-600">
+                <span className="text-sm font-semibold text-emerald-600">
                   {formatPrice(teacher.pricePerHour)}/h
                 </span>
               </div>
@@ -113,7 +113,7 @@ export default async function TeachersPage({
                 {teacher.languages.map((tl) => (
                   <span
                     key={tl.id}
-                    className="rounded-full bg-indigo-50 px-2 py-0.5 text-xs text-indigo-700"
+                    className="rounded-full bg-emerald-50 px-2 py-0.5 text-xs text-emerald-700"
                   >
                     {tl.language.name}
                   </span>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
+import { Logo } from "@/components/logo";
 
 export default async function Home() {
   const languages = await prisma.language.findMany({
@@ -9,9 +10,10 @@ export default async function Home() {
 
   return (
     <div>
-      <section className="bg-gradient-to-b from-indigo-50 to-white">
+      <section className="bg-gradient-to-b from-emerald-50 to-white">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl">
+          <Logo className="mx-auto h-24 w-24" />
+          <h1 className="mt-6 text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl">
             Aprende un idioma con profesores nativos
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-neutral-600">
@@ -21,7 +23,7 @@ export default async function Home() {
           <div className="mt-8 flex justify-center gap-3">
             <Link
               href="/teachers"
-              className="rounded-md bg-indigo-600 px-5 py-3 font-medium text-white hover:bg-indigo-500"
+              className="rounded-md bg-emerald-600 px-5 py-3 font-medium text-white hover:bg-emerald-500"
             >
               Buscar profesor
             </Link>
@@ -29,7 +31,7 @@ export default async function Home() {
               href="/register?role=TEACHER"
               className="rounded-md border border-neutral-300 bg-white px-5 py-3 font-medium text-neutral-800 hover:bg-neutral-50"
             >
-              Enseña en LinguasAcademy
+              Enseña en Lingua&apos;s Academy
             </Link>
           </div>
         </div>
@@ -45,7 +47,7 @@ export default async function Home() {
               <Link
                 key={lang.id}
                 href={`/teachers?language=${lang.code}`}
-                className="rounded-full border border-neutral-200 bg-white px-4 py-2 text-sm text-neutral-700 hover:border-indigo-300 hover:text-indigo-700"
+                className="rounded-full border border-neutral-200 bg-white px-4 py-2 text-sm text-neutral-700 hover:border-emerald-300 hover:text-emerald-700"
               >
                 {lang.name}
               </Link>
