@@ -42,6 +42,17 @@ async function main() {
   const languages = await prisma.language.findMany();
   const specialties = await prisma.specialty.findMany();
 
+  // Las cuentas de demostración comparten una contraseña pública, así que solo
+  // se crean cuando se piden de forma explícita. Sembrarlas en un entorno real
+  // entregaría el panel de administración a cualquiera que lea el README.
+  if (process.env.SEED_DEMO_USERS !== "true") {
+    console.log(
+      "Idiomas y especialidades listos. Usuarios de demostración omitidos " +
+        "(usa SEED_DEMO_USERS=true para crearlos en desarrollo)."
+    );
+    return;
+  }
+
   const passwordHash = await bcrypt.hash("password123", 10);
 
   await prisma.user.upsert({
