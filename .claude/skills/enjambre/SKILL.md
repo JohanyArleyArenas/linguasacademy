@@ -48,8 +48,11 @@ Invoca cada skill en orden con la ruta de la carpeta como argumento. Entre fases
 ## El motor
 
 ```bash
-python3 .claude/skills/enjambre/motor.py <comando> simulaciones/<slug> [opciones]
+python3 <skills>/enjambre/motor.py <comando> simulaciones/<slug> [opciones]
 ```
+
+> `<skills>` es la carpeta que contiene las skills `enjambre*`: el directorio padre del "Base directory" que se muestra al cargar esta skill (por ejemplo `.claude/skills` en un proyecto o `~/.claude/skills` si están instaladas para tu usuario).
+
 
 Comandos: `validar`, `iniciar`, `ronda`, `aplicar <acciones.json>`, `inyectar --texto ...`, `estado`, `buscar "<consulta>" [--agente N] [--rondas A-B]`, `panorama`, `agente <id> [--vistos]`. Solo usa la biblioteca estándar de Python 3. Las skills de cada fase explican cuándo usar cada comando.
 

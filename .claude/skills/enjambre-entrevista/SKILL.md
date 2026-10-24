@@ -6,7 +6,10 @@ argument-hint: "simulaciones/<slug> [@usuario o id] [pregunta]"
 
 # Fase 6: entrevistar a los agentes
 
-Motor: `python3 .claude/skills/enjambre/motor.py agente simulaciones/<slug> <id> --vistos`
+Motor: `python3 <skills>/enjambre/motor.py agente simulaciones/<slug> <id> --vistos`
+
+> `<skills>` es la carpeta que contiene las skills `enjambre*`: el directorio padre del "Base directory" que se muestra al cargar esta skill (por ejemplo `.claude/skills` en un proyecto o `~/.claude/skills` si están instaladas para tu usuario).
+
 
 ## Entrevista individual
 

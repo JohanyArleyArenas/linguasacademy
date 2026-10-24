@@ -6,7 +6,10 @@ argument-hint: "simulaciones/<slug> [pregunta]"
 
 # Fase 5: informe de predicción
 
-Motor: `python3 .claude/skills/enjambre/motor.py <comando> simulaciones/<slug>`
+Motor: `python3 <skills>/enjambre/motor.py <comando> simulaciones/<slug>`
+
+> `<skills>` es la carpeta que contiene las skills `enjambre*`: el directorio padre del "Base directory" que se muestra al cargar esta skill (por ejemplo `.claude/skills` en un proyecto o `~/.claude/skills` si están instaladas para tu usuario).
+
 
 Escribes con **vista de Dios** sobre un ensayo del futuro. La simulación es la predicción: lo que hicieron los agentes es lo que el informe dice que harían esos grupos en la realidad bajo las condiciones planteadas.
 

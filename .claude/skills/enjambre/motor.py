@@ -8,7 +8,7 @@ recomendación, cámara de eco, registro y búsqueda). Claude interpreta a
 cada agente activado y devuelve sus acciones en un archivo JSON.
 
 Uso (desde la raíz del repo):
-    python3 .claude/skills/enjambre/motor.py <comando> <carpeta_sim> [opciones]
+    python3 <skills>/enjambre/motor.py <comando> <carpeta_sim> [opciones]
 
 Comandos:
     validar     Revisa mundo.json, personas.json y config.json

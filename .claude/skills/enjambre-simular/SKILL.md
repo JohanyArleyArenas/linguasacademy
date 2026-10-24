@@ -6,7 +6,10 @@ argument-hint: "simulaciones/<slug> [n_rondas | inyectar \"evento\"]"
 
 # Fases 3–4: configurar y correr la simulación
 
-Motor: `python3 .claude/skills/enjambre/motor.py <comando> simulaciones/<slug>`
+Motor: `python3 <skills>/enjambre/motor.py <comando> simulaciones/<slug>`
+
+> `<skills>` es la carpeta que contiene las skills `enjambre*`: el directorio padre del "Base directory" que se muestra al cargar esta skill (por ejemplo `.claude/skills` en un proyecto o `~/.claude/skills` si están instaladas para tu usuario).
+
 
 Si ya existe `estado.json`, sáltate la parte A: la simulación está en curso. Usa `estado` para ver en qué ronda va y continúa en la parte B.
 
@@ -64,7 +67,7 @@ Añade `"semilla": 42`. Después ejecuta `validar` y corrige lo que señale. Mue
 
 Lee `personas.json` **una sola vez** al empezar, para tener presentes las personas completas. Después repite:
 
-1. `python3 .claude/skills/enjambre/motor.py ronda simulaciones/<slug>`: imprime el turno (también queda en `turno.json`) con la hora simulada, los eventos nuevos y, por cada agente activo, su feed, sus notificaciones y lo último que publicó.
+1. `python3 <skills>/enjambre/motor.py ronda simulaciones/<slug>`: imprime el turno (también queda en `turno.json`) con la hora simulada, los eventos nuevos y, por cada agente activo, su feed, sus notificaciones y lo último que publicó.
 2. Interpreta a **cada** agente activo y escribe sus acciones en `simulaciones/<slug>/acciones/ronda-N.json`:
    ```json
    [
@@ -78,7 +81,7 @@ Lee `personas.json` **una sola vez** al empezar, para tener presentes las person
    - Reddit: `CREAR_POST`, `COMENTAR` (post_id + contenido), `LIKE`, `DISLIKE`, `SEGUIR`, `SILENCIAR`, `NADA`.
    - Cada agente activo necesita al menos una acción (puede ser `NADA`) y como máximo 3.
    - `razon` es opcional: una nota interna breve, útil para el informe.
-3. `python3 .claude/skills/enjambre/motor.py aplicar simulaciones/<slug> simulaciones/<slug>/acciones/ronda-N.json`. Si da PROBLEMA, no se aplicó nada: corrige el archivo y vuelve a aplicarlo.
+3. `python3 <skills>/enjambre/motor.py aplicar simulaciones/<slug> simulaciones/<slug>/acciones/ronda-N.json`. Si da PROBLEMA, no se aplicó nada: corrige el archivo y vuelve a aplicarlo.
 
 Avanza las rondas que pidió el usuario (todas, por defecto) sin pedir permiso entre una y otra. Cada 4–6 rondas, cuéntale en una línea qué está pasando (p. ej. "ronda 8/18: el comunicado del rector se volvió viral en contra; los medios empiezan a citar a los estudiantes"). Cuando termine, ejecuta `panorama` y pasa a `enjambre-informe`.
 
@@ -105,9 +108,9 @@ Para no gastar contexto: no vuelvas a leer `personas.json` cada ronda (el turno 
 Cuando el usuario quiera probar un "¿y si…?" a mitad de la simulación:
 
 ```bash
-python3 .claude/skills/enjambre/motor.py inyectar simulaciones/<slug> --texto "El ministerio congela el aumento" --temas "matrícula,ministerio"
+python3 <skills>/enjambre/motor.py inyectar simulaciones/<slug> --texto "El ministerio congela el aumento" --temas "matrícula,ministerio"
 # o que lo publique un agente concreto:
-python3 .claude/skills/enjambre/motor.py inyectar simulaciones/<slug> --autor 3 --texto "..."
+python3 <skills>/enjambre/motor.py inyectar simulaciones/<slug> --autor 3 --texto "..."
 ```
 
 Para comparar escenarios, copia primero la carpeta (`cp -r simulaciones/<slug> simulaciones/<slug>-variante`) e inyecta el evento solo en la copia. Así quedan dos futuros comparables con la misma semilla.
