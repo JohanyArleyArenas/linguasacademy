@@ -1,0 +1,489 @@
+{
+  "ronda": 8,
+  "total_rondas": 8,
+  "contador_posts": 21,
+  "posts": {
+    "p1": {
+      "id": "p1",
+      "autor_id": 0,
+      "ronda": 0,
+      "tipo": "post",
+      "contenido": "📢 Comunicado | El Consejo Superior aprobó un ajuste del 12 % en el valor de la matrícula de pregrado para 2027, necesario para sostener la acreditación de alta calidad ante el aumento de costos y el rezago en transferencias departamentales. Ampliamos 20 % el fondo de becas y mantenemos el pago en 4 cuotas sin intereses.",
+      "padre_id": null,
+      "temas": [
+        "matrícula",
+        "becas",
+        "acreditación"
+      ],
+      "sentimiento": 0.1,
+      "likes": [
+        4
+      ],
+      "dislikes": [],
+      "reposts": [
+        1
+      ],
+      "comentarios": [],
+      "citas": [
+        "p5"
+      ]
+    },
+    "p2": {
+      "id": "p2",
+      "autor_id": 7,
+      "ronda": 0,
+      "tipo": "post",
+      "contenido": "🔴 UAS sube 12 % la matrícula para 2027: más del doble de la inflación (5,1 %). Estudiantes convocan asamblea; Gobernación dice que giró 'lo presupuestado'. Lo que se sabe 👇",
+      "padre_id": null,
+      "temas": [
+        "matrícula",
+        "inflación",
+        "Gobernación",
+        "asamblea"
+      ],
+      "sentimiento": -0.2,
+      "likes": [],
+      "dislikes": [],
+      "reposts": [],
+      "comentarios": [],
+      "citas": []
+    },
+    "p3": {
+      "id": "p3",
+      "autor_id": 8,
+      "ronda": 0,
+      "tipo": "post",
+      "contenido": "Hagamos la cuenta 🧮 Familia de 4 que gana 2 SMMLV con un hijo en la UAS: el alza del 12 % equivale a casi una semana de mercado más por semestre. Las becas suben 20 %, pero ¿a cuántos alcanzan? Hilo 🧵 1/6",
+      "padre_id": null,
+      "temas": [
+        "matrícula",
+        "economía familiar",
+        "becas"
+      ],
+      "sentimiento": -0.4,
+      "likes": [],
+      "dislikes": [],
+      "reposts": [
+        2
+      ],
+      "comentarios": [],
+      "citas": []
+    },
+    "p4": {
+      "id": "p4",
+      "autor_id": 1,
+      "ronda": 1,
+      "tipo": "post",
+      "contenido": "Tomamos una decisión difícil y la asumo de frente. La alternativa al ajuste era cerrar programas y poner en riesgo la acreditación. Por eso ampliamos 20 % las becas. Invito a la comunidad a discutir con datos, no con consignas.",
+      "padre_id": null,
+      "temas": [
+        "matrícula",
+        "acreditación",
+        "becas"
+      ],
+      "sentimiento": 0.1,
+      "likes": [
+        4
+      ],
+      "dislikes": [],
+      "reposts": [],
+      "comentarios": [],
+      "citas": [
+        "p7"
+      ]
+    },
+    "p5": {
+      "id": "p5",
+      "autor_id": 2,
+      "ronda": 1,
+      "tipo": "cita",
+      "contenido": "¿'Necesario' para quién? 😡 El 68 % de quienes estudiamos en la UAS somos de estratos 1, 2 y 3. Un alza que DUPLICA la inflación no se arregla con un comunicado. Viernes, asamblea general ✊ #MatrículaJustaUAS",
+      "padre_id": "p1",
+      "temas": [
+        "matrícula",
+        "asamblea",
+        "estratos"
+      ],
+      "sentimiento": -0.8,
+      "likes": [
+        8
+      ],
+      "dislikes": [],
+      "reposts": [
+        3
+      ],
+      "comentarios": [],
+      "citas": [
+        "p13"
+      ]
+    },
+    "p6": {
+      "id": "p6",
+      "autor_id": 4,
+      "ronda": 1,
+      "tipo": "post",
+      "contenido": "Siendo realistas: o subimos 12 % o nos quedamos sin acreditación y el cartón vale lo mismo que uno de garaje 🤡 Ya veo venir la asamblea para 'tumbar' el alza y perder otro semestre 💸",
+      "padre_id": null,
+      "temas": [
+        "acreditación",
+        "matrícula",
+        "asamblea"
+      ],
+      "sentimiento": -0.1,
+      "likes": [],
+      "dislikes": [],
+      "reposts": [],
+      "comentarios": [],
+      "citas": [
+        "p10"
+      ]
+    },
+    "p7": {
+      "id": "p7",
+      "autor_id": 8,
+      "ronda": 2,
+      "tipo": "cita",
+      "contenido": "Rectora, con datos entonces 🧮: 20 % más de becas sobre un fondo que ya era chiquito sigue siendo chiquito. ¿Cuántos estudiantes nuevos cubre? Si la respuesta es 'pocos', el 12 % lo pagan las familias de 2 SMMLV. Publiquen las cuentas y hablamos.",
+      "padre_id": "p4",
+      "temas": [
+        "becas",
+        "matrícula",
+        "transparencia"
+      ],
+      "sentimiento": -0.4,
+      "likes": [
+        2,
+        3,
+        5
+      ],
+      "dislikes": [],
+      "reposts": [
+        7
+      ],
+      "comentarios": [],
+      "citas": [
+        "p21"
+      ]
+    },
+    "p8": {
+      "id": "p8",
+      "autor_id": 7,
+      "ronda": 3,
+      "tipo": "post",
+      "contenido": "📊 Rectora de la UAS defiende el alza: 'la alternativa era cerrar programas'. La creadora @valefinanzas le responde pidiendo publicar cuántos estudiantes cubren las becas. ¿Usted cree que el aumento del 12 % es justificado? Responda y cite.",
+      "padre_id": null,
+      "temas": [
+        "matrícula",
+        "becas",
+        "rectora"
+      ],
+      "sentimiento": 0.0,
+      "likes": [],
+      "dislikes": [],
+      "reposts": [],
+      "comentarios": [],
+      "citas": []
+    },
+    "p9": {
+      "id": "p9",
+      "autor_id": 0,
+      "ronda": 4,
+      "tipo": "post",
+      "contenido": "➡️ Aclaración | Con la ampliación del 20 %, el fondo de becas socioeconómicas pasará de cerca de 900 a unos 1.080 beneficiarios en 2027. Abriremos un espacio de diálogo con los estamentos la próxima semana. Consulte el comunicado completo en nuestra web.",
+      "padre_id": null,
+      "temas": [
+        "becas",
+        "matrícula",
+        "diálogo"
+      ],
+      "sentimiento": 0.2,
+      "likes": [],
+      "dislikes": [],
+      "reposts": [],
+      "comentarios": [],
+      "citas": [
+        "p15",
+        "p19"
+      ]
+    },
+    "p10": {
+      "id": "p10",
+      "autor_id": 2,
+      "ronda": 4,
+      "tipo": "cita",
+      "contenido": "Nadie quiere perder la acreditación, Felipe. Pero la calidad no puede pagarse sacando de la U a quien no tiene cómo. Precisamente por eso hay asamblea: para proponer, no para 'tumbar' nada a ciegas. ✊",
+      "padre_id": "p6",
+      "temas": [
+        "acreditación",
+        "asamblea",
+        "matrícula"
+      ],
+      "sentimiento": -0.3,
+      "likes": [],
+      "dislikes": [],
+      "reposts": [],
+      "comentarios": [],
+      "citas": [
+        "p17"
+      ]
+    },
+    "p11": {
+      "id": "p11",
+      "autor_id": 2,
+      "ronda": 4,
+      "tipo": "post",
+      "contenido": "📢 VIERNES 10 a.m., plazoleta central: ASAMBLEA GENERAL ESTUDIANTIL. Traigan sus casos: ¿cuánto les pega el 12 %? Vamos a construir una contrapropuesta y exigir mesa con Rectoría Y Gobernación. ¡Nos vemos en la asamblea! #MatrículaJustaUAS",
+      "padre_id": null,
+      "temas": [
+        "asamblea",
+        "matrícula",
+        "Gobernación"
+      ],
+      "sentimiento": -0.4,
+      "likes": [
+        8
+      ],
+      "dislikes": [],
+      "reposts": [
+        3,
+        7
+      ],
+      "comentarios": [],
+      "citas": []
+    },
+    "p12": {
+      "id": "p12",
+      "autor_id": 3,
+      "ronda": 4,
+      "tipo": "post",
+      "contenido": "🧵 1/5 Voté NO en el Consejo Superior y explico por qué con números 📊: el fondo de becas cubre <900 de 14.000 estudiantes (≈6 %). Con +20 % llegaría a ≈1.080 (≈8 %). El otro 92 % paga el 12 % completo, más del doble de la inflación. Los números no mienten, pero sí se esconden.",
+      "padre_id": null,
+      "temas": [
+        "becas",
+        "matrícula",
+        "Consejo Superior",
+        "presupuesto"
+      ],
+      "sentimiento": -0.4,
+      "likes": [],
+      "dislikes": [],
+      "reposts": [
+        2
+      ],
+      "comentarios": [],
+      "citas": [
+        "p20"
+      ]
+    },
+    "p13": {
+      "id": "p13",
+      "autor_id": 4,
+      "ronda": 4,
+      "tipo": "cita",
+      "contenido": "68 % de estratos 1-3 y la gran solución es... ¿asamblea y paro? 😂 Siendo realistas, perder el semestre le pega más duro a esas mismas familias que el 12 %.",
+      "padre_id": "p5",
+      "temas": [
+        "asamblea",
+        "paro",
+        "matrícula"
+      ],
+      "sentimiento": -0.3,
+      "likes": [],
+      "dislikes": [],
+      "reposts": [],
+      "comentarios": [],
+      "citas": []
+    },
+    "p14": {
+      "id": "p14",
+      "autor_id": 7,
+      "ronda": 4,
+      "tipo": "post",
+      "contenido": "🔴 Estudiantes de la UAS, divididos: la vocera de ASEUAS mantiene la asamblea del viernes; otros alumnos temen que la protesta cueste el semestre y la acreditación. La Gobernación aún no responde a la universidad sobre las transferencias.",
+      "padre_id": null,
+      "temas": [
+        "matrícula",
+        "asamblea",
+        "acreditación",
+        "Gobernación"
+      ],
+      "sentimiento": -0.1,
+      "likes": [],
+      "dislikes": [],
+      "reposts": [],
+      "comentarios": [],
+      "citas": []
+    },
+    "p15": {
+      "id": "p15",
+      "autor_id": 2,
+      "ronda": 5,
+      "tipo": "cita",
+      "contenido": "1.080 de 14.000. O sea que el 92 % queda POR FUERA 😔 ¿Y el 'espacio de diálogo' es 'la próxima semana' sin fecha? La asamblea es este viernes. Los esperamos con fecha y hora, no con aclaraciones. ✊ #MatrículaJustaUAS",
+      "padre_id": "p9",
+      "temas": [
+        "becas",
+        "asamblea",
+        "diálogo"
+      ],
+      "sentimiento": -0.6,
+      "likes": [
+        3
+      ],
+      "dislikes": [],
+      "reposts": [],
+      "comentarios": [],
+      "citas": []
+    },
+    "p16": {
+      "id": "p16",
+      "autor_id": 3,
+      "ronda": 5,
+      "tipo": "post",
+      "contenido": "🧵 2/5 Propuesta concreta para la asamblea: alza escalonada por estrato (0 % estratos 1-2, IPC para el 3, 12 % del 4 en adelante) + publicación de la ejecución presupuestal y del detalle de transferencias departamentales. Si la plata falta, que se vea dónde.",
+      "padre_id": null,
+      "temas": [
+        "matrícula",
+        "presupuesto",
+        "transparencia",
+        "asamblea"
+      ],
+      "sentimiento": -0.1,
+      "likes": [],
+      "dislikes": [],
+      "reposts": [],
+      "comentarios": [],
+      "citas": []
+    },
+    "p17": {
+      "id": "p17",
+      "autor_id": 4,
+      "ronda": 5,
+      "tipo": "cita",
+      "contenido": "Bueno, si la asamblea es para proponer y no para paro, ahí sí hablamos 🤝 Pero que la propuesta diga de dónde sale la plata, porque 'que pague la Gobernación' no es un plan 💸",
+      "padre_id": "p10",
+      "temas": [
+        "asamblea",
+        "matrícula",
+        "Gobernación"
+      ],
+      "sentimiento": 0.0,
+      "likes": [],
+      "dislikes": [],
+      "reposts": [],
+      "comentarios": [],
+      "citas": []
+    },
+    "p18": {
+      "id": "p18",
+      "autor_id": 5,
+      "ronda": 5,
+      "tipo": "post",
+      "contenido": "Vamos por partes. El 12 % es un síntoma: el problema de fondo es la desfinanciación departamental, no los estudiantes. Propongo una mesa tripartita (Rectoría, Gobernación, estamentos) con las cifras sobre la mesa. Un paro, en cambio, afectaría el semestre de todos, también el de los profesores ocasionales.",
+      "padre_id": null,
+      "temas": [
+        "financiación pública",
+        "Gobernación",
+        "diálogo",
+        "paro"
+      ],
+      "sentimiento": -0.1,
+      "likes": [],
+      "dislikes": [],
+      "reposts": [],
+      "comentarios": [],
+      "citas": []
+    },
+    "p19": {
+      "id": "p19",
+      "autor_id": 7,
+      "ronda": 5,
+      "tipo": "cita",
+      "contenido": "📊 La UAS precisa: con la ampliación, las becas cubrirán a unos 1.080 de sus 14.000 estudiantes (≈7,7 %). El resto asumirá el alza del 12 %. Rectoría promete un espacio de diálogo, aún sin fecha.",
+      "padre_id": "p9",
+      "temas": [
+        "becas",
+        "matrícula",
+        "diálogo"
+      ],
+      "sentimiento": -0.1,
+      "likes": [],
+      "dislikes": [],
+      "reposts": [],
+      "comentarios": [],
+      "citas": []
+    },
+    "p20": {
+      "id": "p20",
+      "autor_id": 8,
+      "ronda": 5,
+      "tipo": "cita",
+      "contenido": "Esto 👇 Hagamos la cuenta: con becas para ≈8 %, el 92 % de las familias se come el 12 % completo. Una salida práctica: escalonar el alza por estrato y ampliar a 6 cuotas. Y la Gobernación también tiene que dar la cara. 💰",
+      "padre_id": "p12",
+      "temas": [
+        "becas",
+        "matrícula",
+        "Gobernación",
+        "economía familiar"
+      ],
+      "sentimiento": -0.3,
+      "likes": [],
+      "dislikes": [],
+      "reposts": [
+        3
+      ],
+      "comentarios": [],
+      "citas": []
+    },
+    "p21": {
+      "id": "p21",
+      "autor_id": 1,
+      "ronda": 8,
+      "tipo": "cita",
+      "contenido": "Valentina, respondo con datos: las becas pasarán a unos 1.080 estudiantes. Sé que no alcanza para todos. Por eso convoco una mesa con estamentos el próximo martes e invito a @educacion_valdeluna a sentarse con nosotros: el rezago en las transferencias es real y tiene cifras.",
+      "padre_id": "p7",
+      "temas": [
+        "becas",
+        "diálogo",
+        "Gobernación",
+        "transferencias"
+      ],
+      "sentimiento": 0.1,
+      "likes": [],
+      "dislikes": [],
+      "reposts": [],
+      "comentarios": [],
+      "citas": []
+    }
+  },
+  "seguidores": {
+    "8": [
+      3
+    ],
+    "3": [
+      8
+    ]
+  },
+  "silenciados": {},
+  "notificaciones": {
+    "0": [
+      "@dani_quintero_ts citó tu p9: 1.080 de 14.000. O sea que el 92 % queda POR FUERA 😔 ¿Y el 'espacio de diálogo' es 'la próxima semana' sin fecha? La asamblea es este viernes. Los esp",
+      "@elvaldelunense citó tu p9: 📊 La UAS precisa: con la ampliación, las becas cubrirán a unos 1.080 de sus 14.000 estudiantes (≈7,7 %). El resto asumirá el alza del 12 %. Rectoría p"
+    ],
+    "2": [
+      "@santimejia_rep hizo repost a tu p11",
+      "@pipecardenas_adm citó tu p10: Bueno, si la asamblea es para proponer y no para paro, ahí sí hablamos 🤝 Pero que la propuesta diga de dónde sale la plata, porque 'que pague la Gober",
+      "@elvaldelunense hizo repost a tu p11",
+      "@valefinanzas hizo like a tu p11",
+      "@santimejia_rep hizo like a tu p15"
+    ],
+    "8": [
+      "@hsalcedo_econ hizo like a tu p7",
+      "@santimejia_rep hizo repost a tu p20",
+      "@santimejia_rep empezó a seguirte",
+      "@marcelaibanez_r citó tu p7: Valentina, respondo con datos: las becas pasarán a unos 1.080 estudiantes. Sé que no alcanza para todos. Por eso convoco una mesa con estamentos el pr"
+    ]
+  },
+  "pendiente": null,
+  "eventos_aplicados": []
+}

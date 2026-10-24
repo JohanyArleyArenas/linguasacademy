@@ -1,0 +1,4 @@
+[
+  {"agente_id": 7, "accion": "CREAR_POST", "contenido": "📊 Rectora de la UAS defiende el alza: 'la alternativa era cerrar programas'. La creadora @valefinanzas le responde pidiendo publicar cuántos estudiantes cubren las becas. ¿Usted cree que el aumento del 12 % es justificado? Responda y cite.", "temas": ["matrícula", "becas", "rectora"], "sentimiento": 0.0, "razon": "Convierte el cruce rectora-influencer en noticia y abre conversación."},
+  {"agente_id": 7, "accion": "REPOST", "post_id": "p7"}
+]

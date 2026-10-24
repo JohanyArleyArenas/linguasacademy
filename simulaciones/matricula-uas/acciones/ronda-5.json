@@ -1,0 +1,14 @@
+[
+  {"agente_id": 2, "accion": "CITAR", "post_id": "p9", "contenido": "1.080 de 14.000. O sea que el 92 % queda POR FUERA 😔 ¿Y el 'espacio de diálogo' es 'la próxima semana' sin fecha? La asamblea es este viernes. Los esperamos con fecha y hora, no con aclaraciones. ✊ #MatrículaJustaUAS", "temas": ["becas", "asamblea", "diálogo"], "sentimiento": -0.6},
+  {"agente_id": 2, "accion": "REPOST", "post_id": "p12"},
+  {"agente_id": 3, "accion": "CREAR_POST", "contenido": "🧵 2/5 Propuesta concreta para la asamblea: alza escalonada por estrato (0 % estratos 1-2, IPC para el 3, 12 % del 4 en adelante) + publicación de la ejecución presupuestal y del detalle de transferencias departamentales. Si la plata falta, que se vea dónde.", "temas": ["matrícula", "presupuesto", "transparencia", "asamblea"], "sentimiento": -0.1, "razon": "Pasa de la denuncia a una contrapropuesta técnica, en línea con su perfil."},
+  {"agente_id": 3, "accion": "REPOST", "post_id": "p11"},
+  {"agente_id": 4, "accion": "CITAR", "post_id": "p10", "contenido": "Bueno, si la asamblea es para proponer y no para paro, ahí sí hablamos 🤝 Pero que la propuesta diga de dónde sale la plata, porque 'que pague la Gobernación' no es un plan 💸", "temas": ["asamblea", "matrícula", "Gobernación"], "sentimiento": 0.0, "razon": "El tono no agresivo de Daniela lo hace matizar; mantiene escepticismo."},
+  {"agente_id": 5, "accion": "CREAR_POST", "contenido": "Vamos por partes. El 12 % es un síntoma: el problema de fondo es la desfinanciación departamental, no los estudiantes. Propongo una mesa tripartita (Rectoría, Gobernación, estamentos) con las cifras sobre la mesa. Un paro, en cambio, afectaría el semestre de todos, también el de los profesores ocasionales.", "temas": ["financiación pública", "Gobernación", "diálogo", "paro"], "sentimiento": -0.1},
+  {"agente_id": 5, "accion": "LIKE", "post_id": "p7"},
+  {"agente_id": 7, "accion": "CITAR", "post_id": "p9", "contenido": "📊 La UAS precisa: con la ampliación, las becas cubrirán a unos 1.080 de sus 14.000 estudiantes (≈7,7 %). El resto asumirá el alza del 12 %. Rectoría promete un espacio de diálogo, aún sin fecha.", "temas": ["becas", "matrícula", "diálogo"], "sentimiento": -0.1},
+  {"agente_id": 7, "accion": "REPOST", "post_id": "p11"},
+  {"agente_id": 8, "accion": "CITAR", "post_id": "p12", "contenido": "Esto 👇 Hagamos la cuenta: con becas para ≈8 %, el 92 % de las familias se come el 12 % completo. Una salida práctica: escalonar el alza por estrato y ampliar a 6 cuotas. Y la Gobernación también tiene que dar la cara. 💰", "temas": ["becas", "matrícula", "Gobernación", "economía familiar"], "sentimiento": -0.3},
+  {"agente_id": 8, "accion": "SEGUIR", "objetivo_id": 3},
+  {"agente_id": 8, "accion": "LIKE", "post_id": "p11"}
+]

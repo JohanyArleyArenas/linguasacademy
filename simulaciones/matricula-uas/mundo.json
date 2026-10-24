@@ -1,0 +1,59 @@
+{
+  "requisito": "¿Cómo reaccionarán estudiantes, profesores, egresados, medios y autoridades en Twitter/X durante las primeras 24 horas después de que la Universidad Andina del Sur (ficticia) anuncie un aumento de matrícula del 12 % para 2027? ¿Escala hacia una movilización, se negocia o se diluye?",
+  "resumen_analisis": "Caso ficticio. La UAS anuncia un alza del 12 % en la matrícula de 2027, más del doble de la inflación (5,1 %), justificada por costos, rezago de transferencias departamentales y la acreditación; la compensa con un 20 % más de becas y pago en cuotas. La tensión central enfrenta a la universidad, que culpa a la desfinanciación departamental, con la Gobernación, que dice haber girado lo presupuestado. Los estudiantes no están unidos: la vocera estudiantil y el representante ante el Consejo Superior se oponen y convocan una asamblea, mientras que algunos estudiantes priorizan la acreditación. Los profesores comparten el diagnóstico de la desfinanciación, pero temen un paro. Una egresada con gran audiencia puede amplificar el impacto económico en las familias.",
+  "ontologia": {
+    "tipos_entidad": [
+      {"nombre": "University", "descripcion": "Cuenta institucional de una universidad", "atributos": [{"nombre": "city", "descripcion": "Ciudad sede"}, {"nombre": "accreditation", "descripcion": "Estado de acreditación"}], "ejemplos": ["Universidad Andina del Sur"]},
+      {"nombre": "UniversityAdministrator", "descripcion": "Directivo universitario (rector, vicerrector) con cuenta personal", "atributos": [{"nombre": "position", "descripcion": "Cargo"}], "ejemplos": ["Marcela Ibáñez Rojas"]},
+      {"nombre": "StudentLeader", "descripcion": "Estudiante con rol de representación o vocería formal", "atributos": [{"nombre": "role", "descripcion": "Rol de representación"}, {"nombre": "program", "descripcion": "Programa académico"}], "ejemplos": ["Daniela Quintero", "Santiago Mejía"]},
+      {"nombre": "Student", "descripcion": "Estudiante sin rol de representación", "atributos": [{"nombre": "program", "descripcion": "Programa académico"}], "ejemplos": ["Felipe Cárdenas"]},
+      {"nombre": "Professor", "descripcion": "Docente universitario, incluidos líderes gremiales profesorales", "atributos": [{"nombre": "field", "descripcion": "Área"}, {"nombre": "role", "descripcion": "Rol gremial"}], "ejemplos": ["Héctor Salcedo"]},
+      {"nombre": "GovernmentAgency", "descripcion": "Entidad pública que financia o regula la universidad", "atributos": [{"nombre": "level", "descripcion": "Nivel territorial"}], "ejemplos": ["Secretaría de Educación de Valdeluna"]},
+      {"nombre": "MediaOutlet", "descripcion": "Medio de comunicación con cuenta institucional", "atributos": [{"nombre": "scope", "descripcion": "Cobertura"}], "ejemplos": ["El Valdelunense"]},
+      {"nombre": "Influencer", "descripcion": "Creador de contenido con audiencia grande e independiente", "atributos": [{"nombre": "followers", "descripcion": "Seguidores aproximados"}, {"nombre": "niche", "descripcion": "Temática"}], "ejemplos": ["Valentina Ruiz"]},
+      {"nombre": "Person", "descripcion": "Cualquier persona que no encaje en un tipo más específico", "atributos": [{"nombre": "role", "descripcion": "Relación con el caso"}], "ejemplos": ["madre de un estudiante"]},
+      {"nombre": "Organization", "descripcion": "Cualquier organización que no encaje en un tipo más específico", "atributos": [{"nombre": "kind", "descripcion": "Tipo de organización"}], "ejemplos": ["ASEUAS", "APUAS"]}
+    ],
+    "tipos_relacion": [
+      {"nombre": "STUDIES_AT", "descripcion": "Estudia en", "origen_destino": [{"origen": "Student", "destino": "University"}, {"origen": "StudentLeader", "destino": "University"}]},
+      {"nombre": "WORKS_AT", "descripcion": "Trabaja en", "origen_destino": [{"origen": "Professor", "destino": "University"}, {"origen": "UniversityAdministrator", "destino": "University"}]},
+      {"nombre": "GRADUATED_FROM", "descripcion": "Egresado de", "origen_destino": [{"origen": "Influencer", "destino": "University"}]},
+      {"nombre": "FUNDS", "descripcion": "Transfiere recursos a", "origen_destino": [{"origen": "GovernmentAgency", "destino": "University"}]},
+      {"nombre": "REPORTS_ON", "descripcion": "Cubre informativamente a", "origen_destino": [{"origen": "MediaOutlet", "destino": "University"}, {"origen": "MediaOutlet", "destino": "GovernmentAgency"}]},
+      {"nombre": "OPPOSES", "descripcion": "Se opone públicamente a una decisión de", "origen_destino": [{"origen": "StudentLeader", "destino": "University"}, {"origen": "Person", "destino": "University"}]},
+      {"nombre": "SUPPORTS", "descripcion": "Respalda públicamente a", "origen_destino": [{"origen": "Student", "destino": "University"}]},
+      {"nombre": "DISPUTES_WITH", "descripcion": "Contradice públicamente la versión de", "origen_destino": [{"origen": "GovernmentAgency", "destino": "University"}, {"origen": "University", "destino": "GovernmentAgency"}]},
+      {"nombre": "COMMENTS_ON", "descripcion": "Analiza o comenta públicamente", "origen_destino": [{"origen": "Influencer", "destino": "University"}, {"origen": "Professor", "destino": "GovernmentAgency"}]},
+      {"nombre": "PARENT_OF", "descripcion": "Es madre o padre de un estudiante de", "origen_destino": [{"origen": "Person", "destino": "University"}]}
+    ]
+  },
+  "entidades": [
+    {"id": "e1", "nombre": "Universidad Andina del Sur", "tipo": "University", "resumen": "Universidad de Valdeluna con acreditación de alta calidad. Su Consejo Superior aprobó un alza de matrícula del 12 % para 2027 y amplió un 20 % el fondo de becas.", "atributos": {"city": "Valdeluna", "accreditation": "alta calidad"}, "fuentes": ["el valor de la matrícula de pregrado para el año 2027 tendrá un ajuste del 12 %", "La Universidad ampliará en un 20 % el fondo de becas socioeconómicas"], "sintetico": false},
+    {"id": "e2", "nombre": "Marcela Ibáñez Rojas", "tipo": "UniversityAdministrator", "resumen": "Rectora de la UAS. Defiende el alza como la alternativa a cerrar programas.", "atributos": {"position": "Rectora"}, "fuentes": ["Somos conscientes del esfuerzo que esto implica para las familias, pero la alternativa era cerrar programas"], "sintetico": false},
+    {"id": "e3", "nombre": "Daniela Quintero", "tipo": "StudentLeader", "resumen": "Estudiante de Trabajo Social y vocera de la Asociación de Estudiantes (ASEUAS). Califica el alza como un golpe a las familias de estratos bajos y convoca una asamblea general.", "atributos": {"role": "Vocera ASEUAS", "program": "Trabajo Social"}, "fuentes": ["un golpe a las familias de estratos 1, 2 y 3, que son el 68 % de nuestros estudiantes"], "sintetico": false},
+    {"id": "e4", "nombre": "Santiago Mejía", "tipo": "StudentLeader", "resumen": "Estudiante de Ingeniería Civil y representante estudiantil ante el Consejo Superior; votó en contra. Sostiene con cifras que las becas no compensan el alza.", "atributos": {"role": "Representante estudiantil ante el Consejo Superior", "program": "Ingeniería Civil"}, "fuentes": ["la ampliación de becas no compensa: el fondo cubre a menos de 900 de 14.000 estudiantes"], "sintetico": false},
+    {"id": "e5", "nombre": "Felipe Cárdenas", "tipo": "Student", "resumen": "Estudiante de Administración. Prefiere pagar más antes que perder la acreditación y es escéptico de la protesta.", "atributos": {"program": "Administración"}, "fuentes": ["prefiero pagar un poco más y no perder la acreditación; protestar no paga profesores"], "sintetico": false},
+    {"id": "e6", "nombre": "Héctor Salcedo", "tipo": "Professor", "resumen": "Economista y presidente de la Asociación de Profesores (APUAS). Culpa a la desfinanciación departamental, pero advierte de que un paro afectaría el semestre.", "atributos": {"field": "Economía", "role": "Presidente APUAS"}, "fuentes": ["el problema de fondo es la desfinanciación departamental, no los estudiantes"], "sintetico": false},
+    {"id": "e7", "nombre": "Secretaría de Educación de Valdeluna", "tipo": "GovernmentAgency", "resumen": "Dependencia de la Gobernación, encabezada por Patricia Lozano. Afirma que giró las transferencias según lo presupuestado y que revisará las cifras de la universidad.", "atributos": {"level": "departamental"}, "fuentes": ["las transferencias se han girado según lo presupuestado"], "sintetico": false},
+    {"id": "e8", "nombre": "El Valdelunense", "tipo": "MediaOutlet", "resumen": "Diario regional que publicó la nota de contexto, con la comparación entre el alza y la inflación y las voces de las partes.", "atributos": {"scope": "regional"}, "fuentes": ["el ajuste más que duplica el aumento del costo de vida"], "sintetico": false},
+    {"id": "e9", "nombre": "Valentina Ruiz", "tipo": "Influencer", "resumen": "Egresada de la UAS y creadora de contenido de finanzas personales (@valefinanzas, 210.000 seguidores). Publicó un hilo sobre el peso del alza en una familia que gana dos salarios mínimos.", "atributos": {"followers": "210000", "niche": "finanzas personales"}, "fuentes": ["publicó un hilo explicando cuánto representa el alza para una familia que gana dos salarios mínimos"], "sintetico": false},
+    {"id": "e10", "nombre": "Gloria Pineda", "tipo": "Person", "resumen": "Personaje SINTÉTICO que representa a las familias de estratos 1–3: madre de un estudiante de primer semestre de Enfermería, trabaja en un supermercado y paga la matrícula en cuotas.", "atributos": {"role": "madre de estudiante"}, "fuentes": [], "sintetico": true}
+  ],
+  "relaciones": [
+    {"origen": "e2", "destino": "e1", "tipo": "WORKS_AT", "hecho": "Marcela Ibáñez Rojas es la rectora de la UAS."},
+    {"origen": "e3", "destino": "e1", "tipo": "OPPOSES", "hecho": "La vocera de ASEUAS rechaza el alza y convoca una asamblea."},
+    {"origen": "e4", "destino": "e1", "tipo": "OPPOSES", "hecho": "El representante estudiantil votó en contra en el Consejo Superior."},
+    {"origen": "e5", "destino": "e1", "tipo": "SUPPORTS", "hecho": "Felipe prefiere pagar más y conservar la acreditación."},
+    {"origen": "e6", "destino": "e1", "tipo": "WORKS_AT", "hecho": "Héctor Salcedo es profesor de Economía y preside APUAS."},
+    {"origen": "e6", "destino": "e7", "tipo": "COMMENTS_ON", "hecho": "Salcedo atribuye el problema a la desfinanciación departamental."},
+    {"origen": "e7", "destino": "e1", "tipo": "FUNDS", "hecho": "La Gobernación transfiere recursos a la UAS."},
+    {"origen": "e7", "destino": "e1", "tipo": "DISPUTES_WITH", "hecho": "La Secretaría afirma haber girado lo presupuestado y revisará las cifras de la universidad."},
+    {"origen": "e8", "destino": "e1", "tipo": "REPORTS_ON", "hecho": "El Valdelunense cubrió el anuncio y lo comparó con la inflación."},
+    {"origen": "e9", "destino": "e1", "tipo": "GRADUATED_FROM", "hecho": "Valentina Ruiz es egresada de la UAS."},
+    {"origen": "e9", "destino": "e1", "tipo": "COMMENTS_ON", "hecho": "Publicó un hilo sobre el impacto del alza en una familia que gana dos salarios mínimos."},
+    {"origen": "e10", "destino": "e1", "tipo": "PARENT_OF", "hecho": "Su hijo cursa primer semestre de Enfermería en la UAS."},
+    {"origen": "e3", "destino": "e1", "tipo": "STUDIES_AT", "hecho": "Estudia Trabajo Social en la UAS."},
+    {"origen": "e4", "destino": "e1", "tipo": "STUDIES_AT", "hecho": "Estudia Ingeniería Civil en la UAS."},
+    {"origen": "e5", "destino": "e1", "tipo": "STUDIES_AT", "hecho": "Estudia Administración en la UAS."}
+  ]
+}

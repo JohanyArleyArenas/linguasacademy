@@ -1,0 +1,4 @@
+[
+  {"agente_id": 8, "accion": "CITAR", "post_id": "p4", "contenido": "Rectora, con datos entonces 🧮: 20 % más de becas sobre un fondo que ya era chiquito sigue siendo chiquito. ¿Cuántos estudiantes nuevos cubre? Si la respuesta es 'pocos', el 12 % lo pagan las familias de 2 SMMLV. Publiquen las cuentas y hablamos.", "temas": ["becas", "matrícula", "transparencia"], "sentimiento": -0.4, "razon": "Responde al 'con datos' de la rectora con su propio marco."},
+  {"agente_id": 8, "accion": "LIKE", "post_id": "p5"}
+]

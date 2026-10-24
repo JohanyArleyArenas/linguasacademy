@@ -1,0 +1,5 @@
+[
+  {"agente_id": 3, "accion": "REPOST", "post_id": "p20"},
+  {"agente_id": 3, "accion": "SEGUIR", "objetivo_id": 8},
+  {"agente_id": 3, "accion": "LIKE", "post_id": "p15"}
+]
