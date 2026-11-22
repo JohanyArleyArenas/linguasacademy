@@ -1,0 +1,20 @@
+{
+  "enabledPlugins": {
+    "i-have-adhd@i-have-adhd": true,
+    "octo@nyldn-plugins": true
+  },
+  "extraKnownMarketplaces": {
+    "i-have-adhd": {
+      "source": {
+        "source": "github",
+        "repo": "ayghri/i-have-adhd"
+      }
+    },
+    "nyldn-plugins": {
+      "source": {
+        "source": "git",
+        "url": "https://github.com/nyldn/plugins.git"
+      }
+    }
+  }
+}
